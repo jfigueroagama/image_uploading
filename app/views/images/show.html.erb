@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @image.title %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @image.location %>
+</p>
+
+<p>
+	<% (0...@image.images.count).each do |image| %>
+		<%= image_tag(@image.thumbnail(image)) %>
+	<% end %>	
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
